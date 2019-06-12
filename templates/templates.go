@@ -4,6 +4,7 @@ import (
 	"errors"
 	"math/rand"
 
+	"github.com/briandowns/super-hacker/templates/c"
 	"github.com/briandowns/super-hacker/templates/golang"
 	"github.com/briandowns/super-hacker/templates/python"
 	"github.com/briandowns/super-hacker/templates/scala"
@@ -32,6 +33,11 @@ var scalaTemplates = []string{
 	scala.ScalaPhrases,
 }
 
+var cTemplates = []string{
+	c.BinTree,
+	c.RedBlack,
+}
+
 // RandomGo selects a template from the template slice
 // at random and returns it to the caller.
 func Random(lang string) (string, error) {
@@ -42,6 +48,8 @@ func Random(lang string) (string, error) {
 		return pythonTemplates[rand.Intn(len(pythonTemplates))], nil
 	case "scala":
 		return scalaTemplates[rand.Intn(len(scalaTemplates))], nil
+	case "c":
+		return cTemplates[rand.Intn(len(cTemplates))], nil
 	default:
 		return "", errors.New("unsupported language")
 	}
