@@ -49,14 +49,19 @@ func main() {
 	}
 	var vers bool
 	var bufSize int
-	var language string
+	var lang string
 	flag.BoolVar(&vers, "v", false, "")
 	flag.IntVar(&bufSize, "b", 3, "")
-	flag.StringVar(&language, "l", "", "")
+	flag.StringVar(&lang, "l", "", "")
 	flag.Parse()
 
 	if vers {
 		fmt.Fprintf(os.Stdout, "version: %s - %s\n", version, gitSHA)
+		return
+	}
+
+	if lang == "" {
+		fmt.Println("error: -l flag required")
 		return
 	}
 
@@ -68,7 +73,7 @@ func main() {
 	}
 	defer term.Close()
 
-	code, err := templates.Random(language)
+	code, err := templates.Random(lang)
 	if err != nil {
 		fmt.Println(err)
 		return
