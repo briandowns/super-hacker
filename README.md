@@ -44,7 +44,7 @@ Binary releases can be obtained from the `releases` section of the repository.  
 
 ## Adding More Languages and Templates
 
-To add a new language to `super-hacker`, create a directory named after the language you're adding in the templates directory. In there, add a file to hold the code.  In that file, create a Go `const` that is exported from that new language package and paste in the code.  Make sure to include license headers if available.  If a license is needed, link to it in a comment in the file.
+To add a new language to `super-hacker`, create a directory named after the language you're adding in the templates directory. In there, add a file to hold the code.  In that file, create a Go `const` that is exported from that new language package and paste in the code.  Make sure to include license headers if available.  If a license is needed, link to it in a comment in the file.  It's preferred to include a link to the source of the code if it's not yours.
 
 In `template.go`, add a new slice and reference the newly created constant.  Next, add an entry in the switch state in the `Random(lang string)` function.
 
