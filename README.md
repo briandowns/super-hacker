@@ -36,6 +36,7 @@ $ super-hacker -b 16
 - Scala
 - Haskell
 - Java
+- Javascript
 
 ## Adding More Languages and Templates
 

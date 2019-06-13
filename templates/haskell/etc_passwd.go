@@ -1,5 +1,7 @@
 package haskell
 
+// http://book.realworldhaskell.org/read/data-structures.html
+
 const EtcPasswd = `import Data.List
 import qualified Data.Map as Map
 import System.IO

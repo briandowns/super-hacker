@@ -9,10 +9,12 @@ import (
 	"github.com/briandowns/super-hacker/templates/golang"
 	"github.com/briandowns/super-hacker/templates/haskell"
 	"github.com/briandowns/super-hacker/templates/java"
+	"github.com/briandowns/super-hacker/templates/javascript"
 	"github.com/briandowns/super-hacker/templates/python"
 	"github.com/briandowns/super-hacker/templates/scala"
 )
 
+// init is called to seed the random number generator.
 func init() {
 	rand.Seed(time.Now().Unix())
 }
@@ -41,6 +43,7 @@ var pythonTemplates = []string{
 // scalaTemplates holds all active Scala templates.
 var scalaTemplates = []string{
 	scala.ScalaPhrases,
+	scala.CommandLineParser,
 }
 
 // cTemplates holds all active C templates.
@@ -48,11 +51,13 @@ var cTemplates = []string{
 	c.BinTree,
 	c.RedBlack,
 	c.SimpleMap,
+	c.EulerTotient,
 }
 
 // haskellTemplates holds all active Haskell templates.
 var haskellTemplates = []string{
 	haskell.EtcPasswd,
+	haskell.DepthFirst,
 }
 
 // javaTemplates holds all active Java templates.
@@ -61,6 +66,12 @@ var javaTemplates = []string{
 	java.InsertionSort,
 	java.ConvexHull,
 	java.RotateBits,
+}
+
+// javascriptTemplates holds all active Javascript templates.
+var javascriptTemplates = []string{
+	javascript.DeepCopy,
+	javascript.List,
 }
 
 // RandomGo selects a template from the template slice
@@ -78,6 +89,8 @@ func Random(lang string) (string, error) {
 	case "haskell":
 		return haskellTemplates[rand.Intn(len(haskellTemplates))], nil
 	case "java":
+		return javaTemplates[rand.Intn(len(javaTemplates))], nil
+	case "javascript":
 		return javaTemplates[rand.Intn(len(javaTemplates))], nil
 	default:
 		return "", errors.New("unsupported language")
