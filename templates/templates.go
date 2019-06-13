@@ -8,6 +8,7 @@ import (
 	"github.com/briandowns/super-hacker/templates/c"
 	"github.com/briandowns/super-hacker/templates/golang"
 	"github.com/briandowns/super-hacker/templates/haskell"
+	"github.com/briandowns/super-hacker/templates/java"
 	"github.com/briandowns/super-hacker/templates/python"
 	"github.com/briandowns/super-hacker/templates/scala"
 )
@@ -54,6 +55,14 @@ var haskellTemplates = []string{
 	haskell.EtcPasswd,
 }
 
+// javaTemplates holds all active Java templates.
+var javaTemplates = []string{
+	java.QuickSort,
+	java.InsertionSort,
+	java.ConvexHull,
+	java.RotateBits,
+}
+
 // RandomGo selects a template from the template slice
 // at random and returns it to the caller.
 func Random(lang string) (string, error) {
@@ -68,6 +77,8 @@ func Random(lang string) (string, error) {
 		return cTemplates[rand.Intn(len(cTemplates))], nil
 	case "haskell":
 		return haskellTemplates[rand.Intn(len(haskellTemplates))], nil
+	case "java":
+		return javaTemplates[rand.Intn(len(javaTemplates))], nil
 	default:
 		return "", errors.New("unsupported language")
 	}
