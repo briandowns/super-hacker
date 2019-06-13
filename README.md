@@ -40,7 +40,7 @@ $ super-hacker -b 16
 
 ## Installation
 
-Binary releases can be obtained from the `releases` section of the repository.  To build the, issue `make`.  This will build a binary for your platform.
+Binary releases can be obtained from the `releases` section of the repository.  To build, issue `make`.  This will build a binary for your platform.
 
 ## Adding More Languages and Templates
 
