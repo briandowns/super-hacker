@@ -38,6 +38,7 @@ $ super-hacker -b 16
 - Java
 - Javascript
 - Rockstar
+- Ruby
 
 ## Installation
 
