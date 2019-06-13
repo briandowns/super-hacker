@@ -16,9 +16,9 @@ var (
 	gitSHA  string
 )
 
-const (
-	defaultBufferSize = 3
-)
+// defaultBufferSize holds the default size, in bytes,
+// of the output buffer.
+const defaultBufferSize = 3
 
 const usage = `version: %s - git: %s
 Usage: %s [-blvh]

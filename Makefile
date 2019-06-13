@@ -17,11 +17,11 @@ ifeq ($(OS),Darwin)
 	cp -f $(BINDIR)/$(BINARY)-darwin /usr/local/$(BINDIR)/$(BINARY)
 endif 
 ifeq ($(OS),Linux)
-	./build.sh linux
+	./build.sh linux $(VERSION)
 	cp -f $(BINDIR)/$(BINARY)-linux /usr/local/$(BINDIR)/$(BINARY)
 endif
 ifeq ($(OS),FreeBSD)
-	./build.sh freebsd
+	./build.sh freebsd $(VERSION)
 	cp -f $(BINDIR)/$(BINARY)-freebsd /usr/local/$(BINDIR)/$(BINARY)
 endif
 uninstall: 
