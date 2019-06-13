@@ -20,6 +20,7 @@ super-hacker -l go
 - C
 - Python
 - Scala
+- Haskell
 
 ## Adding More Languages and Templates
 

@@ -6,10 +6,12 @@ import (
 
 	"github.com/briandowns/super-hacker/templates/c"
 	"github.com/briandowns/super-hacker/templates/golang"
+	"github.com/briandowns/super-hacker/templates/haskell"
 	"github.com/briandowns/super-hacker/templates/python"
 	"github.com/briandowns/super-hacker/templates/scala"
 )
 
+// goTemplates holds all active Go templates.
 var goTemplates = []string{
 	golang.SyscallSyscallUnix,
 	golang.BytesReader,
@@ -24,18 +26,27 @@ var goTemplates = []string{
 	golang.FmtFormat,
 }
 
+// pythonTemplates holds all active Python templates.
 var pythonTemplates = []string{
 	python.InterpreterPypy,
 	python.InterpreterGenerator,
 }
 
+// scalaTemplates holds all active Scala templates.
 var scalaTemplates = []string{
 	scala.ScalaPhrases,
 }
 
+// cTemplates holds all active C templates.
 var cTemplates = []string{
 	c.BinTree,
 	c.RedBlack,
+	c.SimpleMap,
+}
+
+// haskellTemplates holds all active Haskell templates.
+var haskellTemplates = []string{
+	haskell.EtcPasswd,
 }
 
 // RandomGo selects a template from the template slice
@@ -50,6 +61,8 @@ func Random(lang string) (string, error) {
 		return scalaTemplates[rand.Intn(len(scalaTemplates))], nil
 	case "c":
 		return cTemplates[rand.Intn(len(cTemplates))], nil
+	case "haskell":
+		return haskellTemplates[rand.Intn(len(haskellTemplates))], nil
 	default:
 		return "", errors.New("unsupported language")
 	}
