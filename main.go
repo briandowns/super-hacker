@@ -3,11 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"io"
-	"math/rand"
 	"os"
 	"strings"
-	"time"
 
 	"github.com/briandowns/super-hacker/templates"
 	term "github.com/nsf/termbox-go"
@@ -19,21 +16,25 @@ var (
 	gitSHA  string
 )
 
-// reset resets the terminal back to defaults.
-func reset() {
-	term.Sync()
-}
+const (
+	defaultBufferSize = 3
+)
 
 const usage = `version: %s - git: %s
-Usage: %s [-bvh]
+Usage: %s [-blvh]
 Options:
 	-h            help menu
 	-v            show version
 	-b            output buffer size
-	-l            language
+	-l            language [default: Go]
 Examples:
 	%[3]s -b 24
 `
+
+// reset resets the terminal back to defaults.
+func reset() {
+	term.Sync()
+}
 
 func main() {
 	flag.Usage = func() {
@@ -51,21 +52,14 @@ func main() {
 	var bufSize int
 	var lang string
 	flag.BoolVar(&vers, "v", false, "")
-	flag.IntVar(&bufSize, "b", 3, "")
-	flag.StringVar(&lang, "l", "", "")
+	flag.IntVar(&bufSize, "b", defaultBufferSize, "")
+	flag.StringVar(&lang, "l", "go", "")
 	flag.Parse()
 
 	if vers {
 		fmt.Fprintf(os.Stdout, "version: %s - %s\n", version, gitSHA)
 		return
 	}
-
-	if lang == "" {
-		fmt.Println("error: -l flag required")
-		return
-	}
-
-	rand.Seed(time.Now().Unix())
 
 	if err := term.Init(); err != nil {
 		fmt.Println(err)
@@ -92,10 +86,13 @@ keyPressListenerLoop:
 			default:
 				read, err := codeBuf.Read(buffer)
 				if err != nil {
-					if err != io.EOF {
+					code, err = templates.Random(lang)
+					if err != nil {
 						fmt.Println(err)
+						return
 					}
-					break
+					codeBuf = strings.NewReader(code)
+					goto keyPressListenerLoop
 				}
 				fmt.Print(string(buffer[:read]))
 			}

@@ -3,6 +3,7 @@ package templates
 import (
 	"errors"
 	"math/rand"
+	"time"
 
 	"github.com/briandowns/super-hacker/templates/c"
 	"github.com/briandowns/super-hacker/templates/golang"
@@ -10,6 +11,10 @@ import (
 	"github.com/briandowns/super-hacker/templates/python"
 	"github.com/briandowns/super-hacker/templates/scala"
 )
+
+func init() {
+	rand.Seed(time.Now().Unix())
+}
 
 // goTemplates holds all active Go templates.
 var goTemplates = []string{
