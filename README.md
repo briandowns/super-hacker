@@ -1,4 +1,4 @@
-# SuperHacker
+# super-hacker
 
 <p align="left">
   <a href="https://godoc.org/github.com/briandowns/super-hacker"><img src="https://godoc.org/github.com/briandowns/super-hacker?status.svg" alt="GoDoc"></a>
@@ -6,7 +6,7 @@
   <a href="https://github.com/briandowns/super-hacker/releases"><img src="https://img.shields.io/badge/version-0.1.0-green.svg?" alt="Version"></a>
 </p>
 
-SuperHacker is a CLI application that will output beautifully written code to your terminal allowing you to astound your friends and family.  By default, the output buffer is set to 3 but is overridable.
+super-hacker is a CLI application that will output beautifully written code to your terminal allowing you to astound your friends and family.  By default, the output buffer is set to 3 but is overridable.  To quit, press `esc` or `ctrl-c`.
 
 ## Example
 
