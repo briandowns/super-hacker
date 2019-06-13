@@ -11,6 +11,7 @@ import (
 	"github.com/briandowns/super-hacker/templates/java"
 	"github.com/briandowns/super-hacker/templates/javascript"
 	"github.com/briandowns/super-hacker/templates/python"
+	"github.com/briandowns/super-hacker/templates/rockstar"
 	"github.com/briandowns/super-hacker/templates/scala"
 )
 
@@ -74,7 +75,13 @@ var javascriptTemplates = []string{
 	javascript.List,
 }
 
-// RandomGo selects a template from the template slice
+// rockstarTemplates holds all active Rockstar templates.
+var rockstarTemplates = []string{
+	rockstar.FizzBuzz,
+	rockstar.NinetyNineBottles,
+}
+
+// Random selects a template from the template slice
 // at random and returns it to the caller.
 func Random(lang string) (string, error) {
 	switch lang {
@@ -92,6 +99,8 @@ func Random(lang string) (string, error) {
 		return javaTemplates[rand.Intn(len(javaTemplates))], nil
 	case "javascript":
 		return javascriptTemplates[rand.Intn(len(javascriptTemplates))], nil
+	case "rockstar":
+		return rockstarTemplates[rand.Intn(len(rockstarTemplates))], nil
 	default:
 		return "", errors.New("unsupported language")
 	}
