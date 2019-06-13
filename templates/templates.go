@@ -78,10 +78,10 @@ var javascriptTemplates = []string{
 // rockstarTemplates holds all active Rockstar templates.
 var rockstarTemplates = []string{
 	rockstar.FizzBuzz,
-	// rockstar.NinetyNineBottles,
+	rockstar.NinetyNineBottles,
 }
 
-// RandomGo selects a template from the template slice
+// Random selects a template from the template slice
 // at random and returns it to the caller.
 func Random(lang string) (string, error) {
 	switch lang {
@@ -100,7 +100,7 @@ func Random(lang string) (string, error) {
 	case "javascript":
 		return javascriptTemplates[rand.Intn(len(javascriptTemplates))], nil
 	case "rockstar":
-		return rockstarTemplates[rand.Intn(len(javascriptTemplates))], nil
+		return rockstarTemplates[rand.Intn(len(rockstarTemplates))], nil
 	default:
 		return "", errors.New("unsupported language")
 	}
