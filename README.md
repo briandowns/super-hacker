@@ -8,7 +8,7 @@
 
 super-hacker is a CLI application that will output beautifully written code to your terminal allowing you to astound your friends and family.  By default, the output buffer is set to 3 but is overridable.  To quit, press `esc` or `ctrl-c`.
 
-## Example
+## Examples
 
 super-hacker with no flags runs it with Go as the default language and an output buffer of 3 bytes.
 
