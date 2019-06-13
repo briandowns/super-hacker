@@ -91,7 +91,7 @@ func Random(lang string) (string, error) {
 	case "java":
 		return javaTemplates[rand.Intn(len(javaTemplates))], nil
 	case "javascript":
-		return javaTemplates[rand.Intn(len(javaTemplates))], nil
+		return javascriptTemplates[rand.Intn(len(javascriptTemplates))], nil
 	default:
 		return "", errors.New("unsupported language")
 	}
