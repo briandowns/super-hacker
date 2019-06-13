@@ -37,6 +37,7 @@ $ super-hacker -b 16
 - Haskell
 - Java
 - Javascript
+- Rockstar
 
 ## Installation
 
