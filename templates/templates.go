@@ -118,8 +118,7 @@ func Random(lang string) (string, error) {
 	case "ruby":
 		return rubyTemplates[rand.Intn(len(rubyTemplates))], nil
 	case "coffeescript":
-		return
-			coffeeTemplates[rand.Intn(len(coffeeTemplates))], nil
+		return coffeeTemplates[rand.Intn(len(coffeeTemplates))], nil
 	default:
 		return "", errors.New("unsupported language")
 	}
