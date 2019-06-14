@@ -39,6 +39,7 @@ $ super-hacker -b 16
 - Javascript
 - Rockstar
 - Ruby
+- CoffeeScript
 
 ## Installation
 

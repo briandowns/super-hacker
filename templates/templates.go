@@ -74,6 +74,7 @@ var javaTemplates = []string{
 var javascriptTemplates = []string{
 	javascript.DeepCopy,
 	javascript.List,
+	javascript.AnagramDetection,
 }
 
 // rockstarTemplates holds all active Rockstar templates.
@@ -87,6 +88,11 @@ var rubyTemplates = []string{
 	ruby.Btree,
 	ruby.EightBitAdder,
 	ruby.ReflexTest,
+}
+
+// coffeeTemplates holds all active CoffeeScript templates.
+var coffeeTemplates = []string{
+	coffeescript.AnagramDetectionCS,
 }
 
 // Random selects a template from the template slice
@@ -111,6 +117,8 @@ func Random(lang string) (string, error) {
 		return rockstarTemplates[rand.Intn(len(rockstarTemplates))], nil
 	case "ruby":
 		return rubyTemplates[rand.Intn(len(rubyTemplates))], nil
+	case "coffeescript":
+		return coffeeTemplates[rand.Intn(len(coffeeTemplates))], nil
 	default:
 		return "", errors.New("unsupported language")
 	}
