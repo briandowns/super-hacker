@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/briandowns/super-hacker/templates/c"
+	"github.com/briandowns/super-hacker/templates/coffeescript"
 	"github.com/briandowns/super-hacker/templates/golang"
 	"github.com/briandowns/super-hacker/templates/haskell"
 	"github.com/briandowns/super-hacker/templates/java"
