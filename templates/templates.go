@@ -89,6 +89,8 @@ var rubyTemplates = []string{
 	ruby.Btree,
 	ruby.EightBitAdder,
 	ruby.ReflexTest,
+	ruby.StackAsArray,
+	ruby.Anagram,
 }
 
 // coffeeTemplates holds all active CoffeeScript templates.
