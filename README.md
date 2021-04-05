@@ -6,11 +6,13 @@
   <a href="https://github.com/briandowns/super-hacker/releases"><img src="https://img.shields.io/badge/version-0.1.0-green.svg?" alt="Version"></a>
 </p>
 
-super-hacker is a CLI application that will output beautifully written code to your terminal allowing you to astound your friends and family.  By default, the output buffer is set to 3 but is overridable.  To quit, press `esc` or `ctrl-c`.
+`super-hacker` is a CLI application that will output beautifully written code to your terminal allowing you to astound your friends and family.  By default, the output buffer is set to 3 but is overridable.  To quit, press `esc` or `ctrl-c`.
+
+![](super-hacker.gif)
 
 ## Examples
 
-super-hacker with no flags runs it with Go as the default language and an output buffer of 3 bytes.
+super-hacker with no flags runs with Go as the default language and an output buffer of 3 bytes.
 
 ```sh
 $ super-hacker
